@@ -87,19 +87,65 @@ var finances = [
     ['Feb-2017', 671099],
   ];
 
+
+  var earningsArray = finances.map((el) => el[1]);
+  var profitMonths = finances.filter((el) => el[1] > 0);
+  var salesOnProfitMonths = profitMonths
+  .map((el) => el[1])
+  .reduce((accVal, curVal) => accVal + curVal, 0);
+
+var avgOfProfitAndLoss =
+  earningsArray.reduce((accVal, curVal) => accVal + curVal, 0) / finances.length; 
+  // get the average of all total and losses
+
+var maxMonth = {
+  monthName: '',
+  profit: 0,
+};
+
+var minMonth = {
+  monthName: '',
+  profit: 0,
+};
+
+finances.forEach((month) => {
+  if (month[1] > maxMonth.profit) {
+    maxMonth.monthName = month[0];
+    maxMonth.profit = month[1];
+  }
+
+  if (month[1] < minMonth.profit) {
+    minMonth.monthName = month[0];
+    minMonth.profit = month[1];
+  }
+
+  return { maxMonth, minMonth };
+});
+
+
+// The title for the project 
+  console.log("Financial Analysis");
+  console.log("--------------------");
+
   // The total number of months included in the dataset.
 
   console.log("Total Months : " + finances.length);
   
   // The net total amount of Profit/Losses over the entire period.
 
-  console.log()
+
+  console.log("Total : " + salesOnProfitMonths);
+
   // The average of the **changes** in Profit/Losses over the entire period.
   //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
   //   * (`Total/(Number of months - 1)`)
   
-console.log()
+console.log("Average Change :" + avgOfProfitAndLoss);
+
   // The greatest increase in Profit/Losses (date and amount) over the entire period.
-console.log()
+
+  console.log("Greatest Increase in Profits/Losses:" + maxMonth );
+
   // The greatest decrease in Profit/Losses (date and amount) over the entire period.
-  console.log()
+
+  console.log("Greatest Decrease in Profits/Losses:" + minMonth );
