@@ -134,7 +134,7 @@ var profitGainMonth;
 var profitLossMonth;
 
 profitGain = finances[0];
-profitLoss = finances[0]
+profitLoss = finances[0];
 
 // **METHOD : FOR LOOP*
 for (var i = 0; i < finances.length; i++) {
