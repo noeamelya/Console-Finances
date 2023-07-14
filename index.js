@@ -88,64 +88,64 @@ var finances = [
   ];
 
 
-  var earningsArray = finances.map((el) => el[1]);
-  var profitMonths = finances.filter((el) => el[1] > 0);
-  var salesOnProfitMonths = profitMonths
-  .map((el) => el[1])
-  .reduce((accVal, curVal) => accVal + curVal, 0);
-
-var avgOfProfitAndLoss =
-  earningsArray.reduce((accVal, curVal) => accVal + curVal, 0) / finances.length; 
-  // get the average of all total and losses
-
-var maxMonth = {
-  monthName: '',
-  profit: 0,
-};
-
-var minMonth = {
-  monthName: '',
-  profit: 0,
-};
-
-finances.forEach((month) => {
-  if (month[1] > maxMonth.profit) {
-    maxMonth.monthName = month[0];
-    maxMonth.profit = month[1];
-  }
-
-  if (month[1] < minMonth.profit) {
-    minMonth.monthName = month[0];
-    minMonth.profit = month[1];
-  }
-
-  return { maxMonth, minMonth };
-});
-
-
 // The title for the project 
-  console.log("Financial Analysis");
-  console.log("--------------------");
+  console.log('Financial Analysis \n-------------------');
 
-  // The total number of months included in the dataset.
-
-  console.log("Total Months : " + finances.length);
+// The total number of months included in the dataset.
+var totalMonths = finances.length
+console.log("Total Months : " + totalMonths);
   
-  // The net total amount of Profit/Losses over the entire period.
+// The net total amount of Profit/Losses over the entire period.
 
+var netTotalAmount = 0;
+// function calculateSum(finances) {
+//   for (var i = 0; i < totalMonths; i++) {
+//     if (typeof finances[i] === 'number') {
+//       netTotalAmount += finances[i];
+// } else if (Array.isArray(finances[i])) {calculateTotal(finances[i])}
 
-  console.log("Total : " + salesOnProfitMonths);
+netTotalAmount = finances.reduce((accumulator, value) => 
+{return accumulator + value[1];},0);
+
+console.log("Total : " + netTotalAmount )
 
   // The average of the **changes** in Profit/Losses over the entire period.
   //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
   //   * (`Total/(Number of months - 1)`)
-  
-console.log("Average Change :" + avgOfProfitAndLoss);
+
+var totalRange
+// for loop start with i = 1 to comparison from next second month
+
+
+
+
+
+
+
+
+
+var averageChange = 
+
+console.log("Average Change : " );
+
+
 
   // The greatest increase in Profit/Losses (date and amount) over the entire period.
-
-  console.log("Greatest Increase in Profits/Losses:" + maxMonth );
-
   // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+var profitGain;
+var profitLoss;
+var profitGainMonth;
+var profitLossMonth
 
-  console.log("Greatest Decrease in Profits/Losses:" + minMonth );
+// starting to make 
+
+
+
+
+
+// console.log(`Greatest Gain in Profits: ${profitGainMonth} (£${profitGain})`);
+// console.log(`Greatest Decrease in Profits ${profitLossMonth} (£${profitLoss})`);
+console.log("Greatest Increase in Profits/Losses:"); 
+
+  
+console.log("Greatest Decrease in Profits/Losses:" );
