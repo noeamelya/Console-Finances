@@ -110,7 +110,7 @@ netTotalAmount = profitMonths
   .reduce((accVal, curVal) => accVal + curVal, 0);
 
 
-console.log("Total : " + "£" + netTotalAmount )
+console.log("Total : " + "$" + netTotalAmount )
 
   // The average of the **changes** in Profit/Losses over the entire period.
 
@@ -136,11 +136,11 @@ var profitLossMonth;
 profitGain = finances[0];
 profitLoss = finances[0]
 
-// **METHOD 3: FOR LOOP*
+// **METHOD : FOR LOOP*
 for (var i = 0; i < finances.length; i++) {
   if (profitGain < finances[i]) {
     profitGain = finances[i];
-//     // get the month from finances array, i+1 since we skip the first month
+//     // get the month from finances array, i+1 since skip the first month
     profitGainMonth = finances[i + 1][0];
   }
   if (profitLoss > finances[i]) {
