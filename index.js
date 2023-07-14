@@ -94,58 +94,63 @@ var finances = [
 // The total number of months included in the dataset.
 var totalMonths = finances.length
 console.log("Total Months : " + totalMonths);
+
+
   
 // The net total amount of Profit/Losses over the entire period.
 
+// 
+
+var profitMonths = 0;
+profitMonths = finances.filter((el) => el[1] > 0);
+
 var netTotalAmount = 0;
-// function calculateSum(finances) {
-//   for (var i = 0; i < totalMonths; i++) {
-//     if (typeof finances[i] === 'number') {
-//       netTotalAmount += finances[i];
-// } else if (Array.isArray(finances[i])) {calculateTotal(finances[i])}
+netTotalAmount = profitMonths
+  .map((el) => el[1])
+  .reduce((accVal, curVal) => accVal + curVal, 0);
 
-netTotalAmount = finances.reduce((accumulator, value) => 
-{return accumulator + value[1];},0);
 
-console.log("Total : " + netTotalAmount )
+console.log("Total : " + "£" + netTotalAmount )
 
   // The average of the **changes** in Profit/Losses over the entire period.
+
   //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
   //   * (`Total/(Number of months - 1)`)
 
-var totalRange
-// for loop start with i = 1 to comparison from next second month
+
+var averageChange = netTotalAmount / (finances.length -1)
+
+console.log("Average Change : " + averageChange );
 
 
 
+// The greatest increase in Profit/Losses (date and amount) over the entire period.
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-
-
-
-
-
-var averageChange = 
-
-console.log("Average Change : " );
-
-
-
-  // The greatest increase in Profit/Losses (date and amount) over the entire period.
-  // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+// define variable :
 var profitGain;
 var profitLoss;
 var profitGainMonth;
-var profitLossMonth
+var profitLossMonth;
 
-// starting to make 
+profitGain = finances[0];
+profitLoss = finances[0]
+
+// **METHOD 3: FOR LOOP*
+for (var i = 0; i < finances.length; i++) {
+  if (profitGain < finances[i]) {
+    profitGain = finances[i];
+//     // get the month from finances array, i+1 since we skip the first month
+    profitGainMonth = finances[i + 1][0];
+  }
+  if (profitLoss > finances[i]) {
+    profitLoss = finances[i];
+    profitLossMonth = finances[i + 1][0];
+  }
+}
 
 
-
-
-
-// console.log(`Greatest Gain in Profits: ${profitGainMonth} (£${profitGain})`);
-// console.log(`Greatest Decrease in Profits ${profitLossMonth} (£${profitLoss})`);
-console.log("Greatest Increase in Profits/Losses:"); 
+console.log("Greatest Increase in Profits/Losses:" + profitGain ); 
 
   
-console.log("Greatest Decrease in Profits/Losses:" );
+console.log("Greatest Decrease in Profits/Losses:" + profitLoss);
