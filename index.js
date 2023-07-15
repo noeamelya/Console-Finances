@@ -99,8 +99,6 @@ console.log("Total Months : " + totalMonths);
   
 // The net total amount of Profit/Losses over the entire period.
 
-// 
-
 var profitMonths = 0;
 profitMonths = finances.filter((el) => el[1] > 0);
 
@@ -110,18 +108,27 @@ netTotalAmount = profitMonths
   .reduce((accVal, curVal) => accVal + curVal, 0);
 
 
-console.log("Total : " + "$" + netTotalAmount )
+console.log(`Total : $${netTotalAmount}` )
 
-  // The average of the **changes** in Profit/Losses over the entire period.
+// The average of the **changes** in Profit/Losses over the entire period.
+//   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+//   * (`Total/(Number of months - 1)`)
 
-  //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-  //   * (`Total/(Number of months - 1)`)
+var differences = [];
+// LOOP ** let start wit ii = 1 to comparison from the second montt
+for (var i = 1; i < totalMonths; i++) {
+  var diifference = finances[i][1] - finances[i - 1][1];
+  differences.push(diifference);
+}
 
+let averageChange =
+  differences.reduce((accumulator, value) => {
+    return accumulator + value;
+  }, 0) /
+  (totalMonths - 1);
 
-var averageChange = netTotalAmount / (finances.length -1)
-
-console.log("Average Change : " + averageChange );
-
+// // toFixed to round it up to the nearst 100th
+console.log(`Average Change: $${averageChange.toFixed(2)}`);
 
 
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
@@ -133,24 +140,22 @@ var profitLoss;
 var profitGainMonth;
 var profitLossMonth;
 
-profitGain = finances[0];
-profitLoss = finances[0];
+profitGain = differences[0];
+profitLoss = differences[0];
 
 // **METHOD : FOR LOOP*
-for (var i = 0; i < finances.length; i++) {
-  if (profitGain < finances[i]) {
-    profitGain = finances[i];
-//     // get the month from finances array, i+1 since skip the first month
-    profitGainMonth = finances[i + 1][0];
+
+for (var difference of differences) {
+  if (profitGain < difference) {
+    profitGain = difference;
+    profitGainMonth = finances[differences.indexOf(difference) + 1][0];
   }
-  if (profitLoss > finances[i]) {
-    profitLoss = finances[i];
-    profitLossMonth = finances[i + 1][0];
+  if (profitLoss > difference) {
+    profitLoss = difference;
+    profitLossMonth = finances[differences.indexOf(difference) + 1][0];
   }
 }
+console.log(`Greatest Increase in Profits/Losses: ${profitGainMonth} ($${profitGain})`);
+console.log(`Greatest Decrease in Profits/Losses: ${profitLossMonth} ($${profitLoss})`);
 
 
-console.log("Greatest Increase in Profits/Losses:" + profitGain ); 
-
-  
-console.log("Greatest Decrease in Profits/Losses:" + profitLoss);
