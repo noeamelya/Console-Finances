@@ -36,8 +36,6 @@ All data to be logged in console
 
 [JavaScript Loops](https://www.w3schools.com/js/js_loop_for.asp)
 
-[favicon](https://gist.github.com/git2thehub/685dbadd23dc8c86107c09217afc034d)
-
 [Pseudo Code Practice Problems](https://computersciencewiki.org/images/e/ea/Pseudo_Code_Practice_Problems.pdf)
 
 ## OUTCOME
@@ -46,7 +44,7 @@ All data to be logged in console
 
 View the project :
 
-![View the project](./images/challenge4.png)
+![View the project](./images/outcome.challenge4.png)
 
 
 ## LICENSE 
