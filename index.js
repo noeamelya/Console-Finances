@@ -115,7 +115,7 @@ console.log(`Total : $${netTotalAmount}` )
 //   * (`Total/(Number of months - 1)`)
 
 var differences = [];
-// LOOP ** let start wit ii = 1 to comparison from the second montt
+// LOOP ** let start wit ii = 1 to comparison from the second month
 for (var i = 1; i < totalMonths; i++) {
   var diifference = finances[i][1] - finances[i - 1][1];
   differences.push(diifference);
@@ -127,7 +127,7 @@ let averageChange =
   }, 0) /
   (totalMonths - 1);
 
-// // toFixed to round it up to the nearst 100th
+// toFixed to round it :
 console.log(`Average Change: $${averageChange.toFixed(2)}`);
 
 
