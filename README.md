@@ -30,7 +30,7 @@ All data to be logged in console
 
 [Format number](https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings)
 
-[Difference between two aray](https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript)
+[Difference between two array](https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript)
 
 - Useful link :
 
