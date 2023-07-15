@@ -27,13 +27,17 @@ All data to be logged in console
 - Function : 
 
 [sum array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
 [Format number](https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings)
+
 [Difference between two aray](https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript)
 
 - Useful link :
 
 [JavaScript Loops](https://www.w3schools.com/js/js_loop_for.asp)
+
 [favicon](https://gist.github.com/git2thehub/685dbadd23dc8c86107c09217afc034d)
+
 [Pseudo Code Practice Problems](https://computersciencewiki.org/images/e/ea/Pseudo_Code_Practice_Problems.pdf)
 
 ## OUTCOME
