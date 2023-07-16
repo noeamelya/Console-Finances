@@ -113,8 +113,8 @@ console.log(`Total: $${netTotalAmount}`);
 var differences = [];
 // LOOP ** let start wit ii = 1 to comparison from the second month
 for (var i = 1; i < totalMonths; i++) {
-  var diifference = finances[i][1] - finances[i - 1][1];
-  differences.push(diifference);
+  var difference = finances[i][1] - finances[i - 1][1];
+  differences.push(difference);
 }
 
 let averageChange =
