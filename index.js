@@ -108,16 +108,16 @@ console.log(`Total: $${netTotalAmount}`);
 
 // The average of the **changes** in Profit/Losses over the entire period.
 //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-//   * (`Total/(Number of months - 1)`)
+
 
 var differences = [];
-// LOOP ** let start wit ii = 1 to comparison from the second month
+// LOOP ** let start wit i = 1 to comparison from the second month
 for (var i = 1; i < totalMonths; i++) {
   var difference = finances[i][1] - finances[i - 1][1];
   differences.push(difference);
 }
-
-let averageChange =
+//   * (`Total/(Number of months - 1)`)
+var averageChange =
   differences.reduce((accumulator, value) => {
     return accumulator + value;
   }, 0) /
