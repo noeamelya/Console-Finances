@@ -32,6 +32,12 @@ All data to be logged in console
 
 [Difference between two array](https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript)
 
+[Reduce Method Creating Accumulator Object](https://stackoverflow.com/questions/46331389/javascript-reduce-method-creating-accumulator-object)
+
+[Number toFixed() method](https://www.techonthenet.com/js/number_tofixed.php)
+
+
+
 - Useful link :
 
 [JavaScript Loops](https://www.w3schools.com/js/js_loop_for.asp)
