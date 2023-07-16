@@ -46,7 +46,7 @@ All data to be logged in console
 
 ## OUTCOME
 
-[GitHub](https://noeamelya.github.io/Console-Finances/)
+[Deployed site ](https://noeamelya.github.io/Console-Finances/)
 
 View the project :
 
